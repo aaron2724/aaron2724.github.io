@@ -2,77 +2,126 @@ Skip to content
 Aaron Wedick.
 Projects Personal work About Contact
 ← All projects / HR & Payroll Transformation
-Professional case study / Business analysis & data analytics
-Turning complex HR and payroll data into migration-ready information.
-Supporting an enterprise HR and payroll systems transformation through data profiling, cleansing, mapping, reconciliation and exception management across legacy and target platforms.
+Case study 01 / Business analysis · Data analytics · Systems transformation
+How do you know employee data is ready to migrate?
+I helped turn inconsistent HR and payroll extracts into structured comparisons, prioritised exceptions and validated migration inputs. This is the story of the analytical work behind an enterprise system transition.
 
-Scale5,000+ employees across Australia and New Zealand
-RoleBusiness Analyst / Data Analysis
-MethodsExcel, Power Query, reconciliation and validation
+Project population5,000+ employees, Australia & New Zealand
+Analysis scopeCross-system testing, including datasets of 15,000+ rows
+My methodsExcel · Power Query · reconciliation · business-rule validation
+Evidence and confidentiality. The project scope and types of work described here are drawn from my professional experience. The tables and examples below are reconstructed with fictional records to illustrate the methods, not original client data or independently measured project outcomes.
 On this page
-01 / Context 02 / Challenge 03 / My role 04 / Approach 05 / Deliverables 06 / Impact 07 / Key learning
-01. Project context
-As part of a wider HR and payroll transformation, the organisation needed to prepare and validate employee and workforce information across multiple systems. The work involved legacy and target HR and payroll environments including Preceda, iChris, iHub and Kronos, with dependencies on wider workforce management structures.
+01 / Decision to make 02 / Data and risks 03 / How I worked 04 / Worked example 05 / Validation logic 06 / Deliverables 07 / Outcome and limits
+01 / The business question
+What needs correcting before the new system can be trusted?
+During an enterprise HR and payroll transformation, different applications held overlapping employee information. The migration involved data from Preceda, iChris and Oracle iHub, alongside workforce and payroll dependencies involving Kronos.
 
-At a scale of more than 5,000 employees across Australia and New Zealand, differences in system fields, business rules and existing records made reliable data migration a significant workstream.
+The challenge was not just to move fields into a new system. It was to establish which differences were real errors, which were legitimate business rules, and which needed a decision from HR or Payroll before loading or approving data.
 
-Public case study note. This page describes my contribution and working approach at a high level. Employee data, internal file layouts, configurations and unpublished business results are intentionally excluded.
-02. The challenge
-Data that is suitable for one system is not necessarily ready for another. Employee identifiers, names, employment attributes, remuneration and working arrangements needed to be aligned with target requirements, while source-to-target discrepancies had to be distinguished from legitimate business differences.
+Can we explain every material difference between the source, migration output and target record before it affects payroll or employment data?
 
-The challenge was therefore not simply transferring records. It was creating a repeatable way to identify, explain and resolve exceptions so that HR, Payroll and Technology stakeholders could make informed decisions before and after migration activities.
+My role: Hands-on profiling, cleansing, reconciliation, exception investigation, file preparation, testing support and communication of findings to HR, Payroll and Technology stakeholders. I supported delivery as part of a wider team, rather than owning the entire transformation.
 
-03. My role and contribution
-Working as a Business Analyst, I carried out hands-on analysis and data remediation, coordinated clarification of business rules with stakeholders and helped translate technical exceptions into actionable validation work.
+02 / Data understanding
+Multiple systems, different meanings
+Employee information needed to be reconciled across a range of domains. I worked with data including employee identifiers, employment status, cost centres, positions, work patterns, leave groups, salary or remuneration attributes, and payroll-related classifications.
 
-Profiled and compared employee and payroll-related datasets across legacy and target systems.
-Investigated mismatched fields, missing values and inconsistent employee or position attributes.
-Prepared and checked data for structured uploads into the target HR environment.
-Worked with HR, Payroll and Technology teams to confirm mapping rules and resolve exceptions.
-Supported migration testing, user acceptance testing, cutover readiness and post-load reconciliation.
-Summarised analysis and outstanding issues for project stakeholders.
-04. Analytical approach
-I approached reconciliation as a structured sequence, moving from raw extracts to validated outputs and clearly categorised exceptions.
+Technical risk
+Records that do not line up
+An identifier or field can be present in two extracts but represent different record timing, formatting or mapping conventions.
 
-Step 01
-Profile source data
-Understand available fields, data types, missing values and inconsistent formats before attempting comparisons.
+Business risk
+False positives and missed issues
+Flagging every difference as an error creates unnecessary remediation; ignoring differences can leave incorrect target data.
 
-Step 02
-Transform and align
-Use Excel and Power Query to standardise comparison fields, apply mapping logic and prepare comparable records.
+The analysis covered individual employee records and larger testing extracts. The 5,000+ employee population and 15,000+ row testing datasets represent different measures of scale and should not be interpreted as the number of detected errors.
 
-Step 03
-Reconcile and investigate
-Identify mismatches and exceptions, distinguish formatting differences from substantive issues, and trace causes.
+03 / Analytical workflow
+From raw extracts to decisions
+Excel and Power Query supported repeatable comparisons. The sequence below illustrates how I moved from source data to a list of issues that could be investigated and acted on.
 
-Step 04
-Validate and report
-Confirm resolutions with business owners, prepare corrected outputs and communicate outstanding migration risks.
+01 · Input
+Collect & profile
+Check keys, available fields, missing values and file structure.
+02 · Prepare
+Clean & map
+Normalise comparable values and apply agreed business mappings.
+03 · Analyse
+Reconcile
+Compare aligned records, flag field-level differences and group exceptions.
+04 · Resolve
+Validate & retest
+Agree corrections with owners, prepare outputs and verify subsequent extracts.
+Why this mattered: repeatable checks enabled the team to distinguish widespread mapping patterns from isolated employee exceptions, and meant newly received files could be evaluated against comparable rules.
 
-The work covered data such as personal and employment fields, employee and position identifiers, job and cost centre information, remuneration groups, work patterns, leave groups and salary-related attributes.
+04 / Reconstructed example
+How a mismatch became an actionable exception
+Below is a fictional illustration of the employee-level validation approach. It shows the kinds of comparisons, exception categories and stakeholder questions involved. These are not real records, screenshots or measured project findings.
 
-05. Deliverables
-Repeatable data reconciliation: structured comparisons and validation checks using Excel and Power Query.
-Exception analysis: mismatch reporting and investigation outputs to make remediation work easier to prioritise.
-Migration data preparation: cleansed and validated information for target-system upload and review.
-Testing and readiness support: analysis of load discrepancies, validation findings and cutover dependencies.
-Stakeholder reporting: clear summaries of data quality issues, remediation progress and decisions requiring input.
-Any future visual examples will use synthetic or anonymised data rather than internal records.
+Example: source-to-target comparison
+Synthetic sample · invented identifiers and values
+Employee	Field	Legacy value	Target value	Check result
+DEMO-001	Cost centre	CC-021	CC-021	Match
+DEMO-002	Salary basis	Annual	Hourly	Investigate
+DEMO-003	Leave group	LG-A	LG-B	Confirm mapping
+DEMO-004	Employee ID	000418	418	Normalise key
+Investigation
+DEMO-002: salary basis
+The difference cannot be treated as formatting. It may affect remuneration calculations, so it needs a source-of-truth check and confirmation from Payroll before correction or acceptance.
 
-06. Outcomes and impact
-Helped identify and address source-to-target discrepancies ahead of migration milestones.
-Improved traceability of data quality issues through structured exception identification and follow-up.
-Provided stakeholders with clearer evidence for confirming business rules and validating migration data.
-Contributed to testing and migration readiness through reconciliation of target data and investigation of load issues.
-Capability demonstrated: combining hands-on data analytics with business analysis and stakeholder collaboration to reduce uncertainty in complex systems transformation.
-Specific time savings, error-reduction percentages and financial impact are intentionally not claimed without verified supporting evidence.
+Interpretation
+DEMO-004: employee key
+Different representations of the same identifier may create a false mismatch. Standardising keys before comparing records helps avoid wasted investigation and incorrect joins.
 
-07. What this project demonstrates
-Reliable migration outcomes depend on more than technical transformations. They require careful interpretation of business rules, repeatable validation, clear ownership of exceptions and communication between operational and technology teams.
+How this was used in practice: discrepancy flags, comparison logic and summary tables helped identify which records required remediation, clarification or further testing. Pivots and grouped outputs enabled stakeholders to assess the pattern and scale of exception types rather than reviewing thousands of rows individually.
 
-This engagement reflects the way I work across business and data disciplines: understanding the underlying process, interrogating the evidence and converting complex findings into practical next steps.
+05 / Logic and quality control
+Making the checks repeatable
+The analytical work required more than a single lookup. Examples of the checks and decisions involved included:
 
-← Back to all projects
+Stable comparison keys: use appropriate identifiers to align records, recognising that some systems format employee keys differently.
+Field-level checks: compare important attributes independently rather than relying solely on an overall record status.
+Business-rule review: distinguish allowed mappings from errors, especially for remuneration, leave and employment attributes.
+Exception grouping: summarise by field, reason or affected cohort so the correct business owner can investigate.
+Re-testing: compare new extracts or outputs after corrections to determine whether an issue remains.
+Illustrative decision logic
+Conceptual example, not production Power Query code
+IF records cannot be reliably matched:
+    Flag = "Identity / key review"
+ELSE IF mapped source value equals target value:
+    Flag = "Match"
+ELSE IF a documented business rule explains the difference:
+    Flag = "Confirm accepted mapping"
+ELSE:
+    Flag = "Investigate with field owner"
+This is a simplified explanation of the method, not a claim that a particular production rule or script was implemented in precisely this format.
+
+06 / Tangible contribution
+What I produced and supported
+Reconciliation workbooks
+Excel and Power Query comparisons that surfaced source-to-target discrepancies for investigation.
+
+Exception summaries
+Mismatch pivots and issue categorisation to communicate where data failed checks and required a decision.
+
+Validated migration inputs
+Cleaned and mapped data prepared for bulk uploads and checked against target requirements.
+
+Testing and cutover support
+Analysis of load errors, payroll-cycle differences and post-migration discrepancies alongside stakeholders.
+
+Specific workstreams included employee data alignment, migration file checks and post-switch validation of fields such as remuneration and full-time-equivalent information. The exact proprietary file layouts and employee-level data remain excluded from this public case study.
+
+07 / Outcome and evidence
+The improvement was in the quality of decisions
+The contribution was to make complex, fragmented source data more comparable, identify exceptions in a repeatable way, and give stakeholders clearer evidence for migration validation and remediation decisions.
+
+Supported outcomes: structured exception review, validated migration input preparation, investigation of load errors and better visibility of outstanding data issues across testing and readiness activities.
+
+What I am not claiming: I have not included an error-reduction percentage, hours saved, financial savings or a claim of zero payroll defects because those figures have not been verified. The demo table above illustrates analysis; it is not evidence of a measured result.
+What I learned
+Data migrations succeed when technical comparisons are tied to business meaning. A mismatch flag is only the start: an analyst must establish whether the underlying difference is valid, explain its implications and help the correct stakeholder make a decision.
+
+← Back to projects
 
 © 2026 Aaron WedickProfessional portfolio
