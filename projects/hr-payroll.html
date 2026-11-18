@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#0a111d">
   <title>HR &amp; Payroll Transformation | Aaron Wedick</title>
   <link rel="stylesheet" href="../styles.css">
+
   <style>
     /* Page-specific components built on the shared portfolio stylesheet. */
     .case-hero h1{max-width:950px}
@@ -34,12 +35,45 @@
     .prose section{scroll-margin-top:110px}
     .prose blockquote{border-left:3px solid var(--accent);padding:15px 20px;background:var(--surface);color:var(--fg);margin:20px 0}
     .end-link{display:inline-block;margin:36px 0;color:var(--accent);font-weight:700}
-    @media(max-width:920px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:560px){.steps,.example-pair{grid-template-columns:1fr}.case-hero h1{font-size:2.45rem}}
+
+    #dashboard {
+      scroll-margin-top: 110px;
+    }
+
+    .dashboard-frame {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 85vh;
+      min-height: 560px;
+      max-height: 950px;
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f2f5f4;
+    }
+
+    .dashboard-full-view {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    @media(max-width:920px){
+      .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+
+    @media(max-width:560px){
+      .steps,.example-pair{grid-template-columns:1fr}
+      .case-hero h1{font-size:2.45rem}
+    }
   </style>
 </head>
+
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
   <header class="topbar">
     <nav class="wrap" aria-label="Main navigation">
       <a class="logo" href="../index.html">Aaron Wedick<b>.</b></a>
@@ -51,23 +85,63 @@
       </div>
     </nav>
   </header>
+
   <main id="main">
     <div class="wrap case-hero">
-      <div class="breadcrumb"><a href="../index.html#projects">← All projects</a> / HR &amp; Payroll Transformation</div>
+      <div class="breadcrumb">
+        <a href="../index.html#projects">← All projects</a> / HR &amp; Payroll Transformation
+      </div>
+
       <div class="eyebrow">Professional case study · Business analysis · Data analytics</div>
+
       <h1>How do you know employee data is <em>ready to migrate?</em></h1>
-      <p class="case-intro">I helped turn inconsistent HR and payroll extracts into structured comparisons, prioritised exceptions and validated migration inputs. This case study explains the analytical reasoning behind that work.</p>
+
+      <p class="case-intro">
+        I helped turn inconsistent HR and payroll extracts into structured comparisons,
+        prioritised exceptions and validated migration inputs. This case study explains
+        the analytical reasoning behind that work.
+      </p>
+
       <div class="facts">
         <div class="fact"><strong>Focus</strong>HR &amp; payroll systems transformation</div>
         <div class="fact"><strong>My contribution</strong>Data profiling, reconciliation and validation</div>
         <div class="fact"><strong>Methods</strong>Excel, Power Query, business-rule checks</div>
       </div>
-      <div class="notice" style="margin-top:25px"><strong>Confidentiality note.</strong> This is a high-level account of professional experience. All example records, codes, numbers and values below are fictional. No client data, internal documents, proprietary mappings or unverified outcome metrics are published.</div>
+
+      <div class="notice" style="margin-top:25px">
+        <strong>Confidentiality note.</strong> This is a high-level account of professional
+        experience. All example records, codes, numbers and values below are fictional.
+        No client data, internal documents, proprietary mappings or unverified outcome
+        metrics are published.
+      </div>
     </div>
+
+    <section id="dashboard" class="wrap" aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title">Interactive HR migration dashboard</h2>
+
+      <p class="case-intro">
+        I built this independent Power BI project using 5,000 fictional employee records.
+        Explore the web version below. Start with <strong>Data quality &amp; transformation</strong>
+        to compare raw and cleaned values, then open <strong>Migration readiness</strong>
+        to see which records can progress to business sign-off.
+      </p>
+
+      <iframe
+        class="dashboard-frame"
+        src="./hr-migration.html"
+        title="HR migration dashboard with interactive views for reconciliation, cleansing and migration readiness">
+      </iframe>
+
+      <a class="dashboard-full-view" href="./hr-migration.html">
+        Open dashboard in full browser view
+      </a>
+    </section>
+
     <section>
       <div class="wrap case-content">
         <aside class="case-nav" aria-label="On this page">
           <strong>On this page</strong>
+          <a href="#dashboard">Interactive dashboard</a>
           <a href="#question">01 / Business question</a>
           <a href="#data">02 / Data and risks</a>
           <a href="#workflow">03 / Analytical workflow</a>
@@ -76,60 +150,187 @@
           <a href="#deliverables">06 / Deliverables</a>
           <a href="#outcomes">07 / Outcomes and limits</a>
         </aside>
+
         <div class="prose">
           <section id="question">
             <div class="mini-label">01 / The business question</div>
             <h2>What needs correcting before the new system can be trusted?</h2>
-            <p>An enterprise HR and payroll transformation required data held in different applications to be prepared, compared and validated. The challenge was not simply transferring fields. It was understanding whether discrepancies reflected actual errors, legitimate differences in business rules or issues requiring a decision from HR or Payroll.</p>
-            <blockquote>Can we explain material differences between source, migration output and target records before they affect employment or payroll information?</blockquote>
-            <p><strong>My contribution:</strong> I carried out hands-on profiling, cleansing, reconciliation, exception investigation and file preparation. I also supported testing and communicated findings to business and technology stakeholders as part of a wider delivery team.</p>
+
+            <p>
+              An enterprise HR and payroll transformation required data held in different
+              applications to be prepared, compared and validated. The challenge was not
+              simply transferring fields. It was understanding whether discrepancies
+              reflected actual errors, legitimate differences in business rules or issues
+              requiring a decision from HR or Payroll.
+            </p>
+
+            <blockquote>
+              Can we explain material differences between source, migration output and
+              target records before they affect employment or payroll information?
+            </blockquote>
+
+            <p>
+              <strong>My contribution:</strong> I carried out hands-on profiling,
+              cleansing, reconciliation, exception investigation and file preparation.
+              I also supported testing and communicated findings to business and
+              technology stakeholders as part of a wider delivery team.
+            </p>
           </section>
+
           <section id="data">
             <div class="mini-label">02 / Data understanding</div>
             <h2>Multiple systems, different meanings</h2>
-            <p>The analysis involved employee attributes such as identifiers, employment status, organisational assignments, work patterns, leave classifications and remuneration-related fields. Different applications can store comparable information using different formats, effective dates or permitted values.</p>
+
+            <p>
+              The analysis involved employee attributes such as identifiers, employment
+              status, organisational assignments, work patterns, leave classifications
+              and remuneration-related fields. Different applications can store comparable
+              information using different formats, effective dates or permitted values.
+            </p>
+
             <div class="example-pair">
-              <div><div class="mini-label">Technical risk</div><h3>Records fail to align</h3><p>A record may exist in both files but differ because keys, formats or timing do not align.</p></div>
-              <div><div class="mini-label">Business risk</div><h3>Exceptions misclassified</h3><p>A harmless formatting difference can be mistaken for an error, while a meaningful discrepancy can be overlooked.</p></div>
+              <div>
+                <div class="mini-label">Technical risk</div>
+                <h3>Records fail to align</h3>
+                <p>A record may exist in both files but differ because keys, formats or timing do not align.</p>
+              </div>
+              <div>
+                <div class="mini-label">Business risk</div>
+                <h3>Exceptions misclassified</h3>
+                <p>A harmless formatting difference can be mistaken for an error, while a meaningful discrepancy can be overlooked.</p>
+              </div>
             </div>
           </section>
+
           <section id="workflow">
             <div class="mini-label">03 / Analytical workflow</div>
             <h2>From raw extracts to decisions</h2>
-            <p>Excel and Power Query supported repeatable comparisons and investigation outputs. This is a simplified representation of the approach, not a proprietary system design.</p>
+
+            <p>
+              Excel and Power Query supported repeatable comparisons and investigation
+              outputs. This is a simplified representation of the approach, not a
+              proprietary system design.
+            </p>
+
             <div class="steps">
-              <div class="step"><div class="mini-label">01 · Input</div><h3>Profile</h3><p>Review keys, field types, missing values and structures.</p></div>
-              <div class="step"><div class="mini-label">02 · Prepare</div><h3>Align</h3><p>Standardise comparable values and apply approved mappings.</p></div>
-              <div class="step"><div class="mini-label">03 · Analyse</div><h3>Compare</h3><p>Flag discrepancies and categorise the affected fields.</p></div>
-              <div class="step"><div class="mini-label">04 · Resolve</div><h3>Retest</h3><p>Investigate with owners and check corrected outputs.</p></div>
+              <div class="step">
+                <div class="mini-label">01 · Input</div>
+                <h3>Profile</h3>
+                <p>Review keys, field types, missing values and structures.</p>
+              </div>
+              <div class="step">
+                <div class="mini-label">02 · Prepare</div>
+                <h3>Align</h3>
+                <p>Standardise comparable values and apply approved mappings.</p>
+              </div>
+              <div class="step">
+                <div class="mini-label">03 · Analyse</div>
+                <h3>Compare</h3>
+                <p>Flag discrepancies and categorise the affected fields.</p>
+              </div>
+              <div class="step">
+                <div class="mini-label">04 · Resolve</div>
+                <h3>Retest</h3>
+                <p>Investigate with owners and check corrected outputs.</p>
+              </div>
             </div>
-            <p><strong>Why it mattered:</strong> The process helped distinguish widespread mapping patterns from individual employee-level exceptions, making findings more useful for stakeholder review.</p>
+
+            <p>
+              <strong>Why it mattered:</strong> The process helped distinguish widespread
+              mapping patterns from individual employee-level exceptions, making findings
+              more useful for stakeholder review.
+            </p>
           </section>
+
           <section id="example">
             <div class="mini-label">04 / Reconstructed example</div>
             <h2>How a mismatch became an actionable exception</h2>
-            <p>The following table is entirely synthetic. It illustrates categories of checks and potential decisions rather than actual records or measured project findings.</p>
+
+            <p>
+              The following table is entirely synthetic. It illustrates categories of
+              checks and potential decisions rather than actual records or measured
+              project findings.
+            </p>
+
             <div class="table-scroll">
               <table>
-                <caption style="text-align:left;padding:12px 15px;color:var(--muted)">Fictional source-to-target comparison</caption>
-                <thead><tr><th>Employee</th><th>Field</th><th>Source</th><th>Target</th><th>Assessment</th></tr></thead>
+                <caption style="text-align:left;padding:12px 15px;color:var(--muted)">
+                  Fictional source-to-target comparison
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Field</th>
+                    <th>Source</th>
+                    <th>Target</th>
+                    <th>Assessment</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td>DEMO-001</td><td>Cost centre</td><td>CC-021</td><td>CC-021</td><td><span class="status ok">Match</span></td></tr>
-                  <tr><td>DEMO-002</td><td>Salary basis</td><td>Annual</td><td>Hourly</td><td><span class="status warn">Investigate</span></td></tr>
-                  <tr><td>DEMO-003</td><td>Leave group</td><td>LG-A</td><td>LG-B</td><td><span class="status warn">Confirm mapping</span></td></tr>
-                  <tr><td>DEMO-004</td><td>Employee key</td><td>000418</td><td>418</td><td><span class="status">Normalise key</span></td></tr>
+                  <tr>
+                    <td>DEMO-001</td>
+                    <td>Cost centre</td>
+                    <td>CC-021</td>
+                    <td>CC-021</td>
+                    <td><span class="status ok">Match</span></td>
+                  </tr>
+                  <tr>
+                    <td>DEMO-002</td>
+                    <td>Salary basis</td>
+                    <td>Annual</td>
+                    <td>Hourly</td>
+                    <td><span class="status warn">Investigate</span></td>
+                  </tr>
+                  <tr>
+                    <td>DEMO-003</td>
+                    <td>Leave group</td>
+                    <td>LG-A</td>
+                    <td>LG-B</td>
+                    <td><span class="status warn">Confirm mapping</span></td>
+                  </tr>
+                  <tr>
+                    <td>DEMO-004</td>
+                    <td>Employee key</td>
+                    <td>000418</td>
+                    <td>418</td>
+                    <td><span class="status">Normalise key</span></td>
+                  </tr>
                 </tbody>
               </table>
             </div>
+
             <div class="example-pair">
-              <div><div class="mini-label">Investigation</div><h3>DEMO-002: salary basis</h3><p>Annual versus hourly is potentially substantive, so the appropriate response is to confirm the authoritative source and applicable business rule with Payroll.</p></div>
-              <div><div class="mini-label">Interpretation</div><h3>DEMO-004: employee key</h3><p>Leading zeroes can create a false mismatch. Normalisation may establish that the identifiers are equivalent, but must be applied consistently and only where justified.</p></div>
+              <div>
+                <div class="mini-label">Investigation</div>
+                <h3>DEMO-002: salary basis</h3>
+                <p>
+                  Annual versus hourly is potentially substantive, so the appropriate
+                  response is to confirm the authoritative source and applicable
+                  business rule with Payroll.
+                </p>
+              </div>
+              <div>
+                <div class="mini-label">Interpretation</div>
+                <h3>DEMO-004: employee key</h3>
+                <p>
+                  Leading zeroes can create a false mismatch. Normalisation may
+                  establish that the identifiers are equivalent, but must be applied
+                  consistently and only where justified.
+                </p>
+              </div>
             </div>
-            <p>Comparison flags and summary tables can then group exceptions by type, making it easier to assess recurring patterns and assign follow-up actions rather than checking every row manually.</p>
+
+            <p>
+              Comparison flags and summary tables can then group exceptions by type,
+              making it easier to assess recurring patterns and assign follow-up
+              actions rather than checking every row manually.
+            </p>
           </section>
+
           <section id="logic">
             <div class="mini-label">05 / Logic and quality control</div>
             <h2>Making checks repeatable</h2>
+
             <ul>
               <li><strong>Reliable keys:</strong> align records using appropriate identifiers and known formatting rules.</li>
               <li><strong>Field-level comparisons:</strong> identify exactly which attribute differs.</li>
@@ -137,6 +338,7 @@
               <li><strong>Exception grouping:</strong> summarise related issues for the correct decision-maker.</li>
               <li><strong>Retesting:</strong> verify what changed following an agreed correction.</li>
             </ul>
+
             <div class="mini-label">Illustrative logic, not production code</div>
             <pre><code>IF records cannot be matched reliably:
     Flag = "Key review"
@@ -147,40 +349,61 @@ ELSE IF a documented rule explains the difference:
 ELSE:
     Flag = "Investigate with field owner"</code></pre>
           </section>
+
           <section id="deliverables">
             <div class="mini-label">06 / Tangible contribution</div>
             <h2>What I produced and supported</h2>
+
             <ul>
               <li><strong>Reconciliation workbooks:</strong> repeatable Excel and Power Query comparisons highlighting source-to-target discrepancies.</li>
               <li><strong>Exception summaries:</strong> grouped mismatch reporting that supported investigation and prioritisation.</li>
               <li><strong>Migration preparation:</strong> cleaned and mapped data checked against target requirements before upload.</li>
               <li><strong>Testing support:</strong> investigation of load exceptions and post-transition differences alongside relevant stakeholders.</li>
             </ul>
-            <p>These descriptions intentionally exclude internal file layouts, operational configuration and employee-level information.</p>
+
+            <p>
+              These descriptions intentionally exclude internal file layouts, operational
+              configuration and employee-level information.
+            </p>
           </section>
+
           <section id="outcomes">
             <div class="mini-label">07 / Outcomes and evidence</div>
             <h2>The improvement was in the quality of decisions</h2>
-            <p>The analytical contribution made fragmented data more comparable and issues more traceable, helping stakeholders evaluate discrepancies and support migration validation and remediation.</p>
-            <div class="notice"><strong>Evidence boundary:</strong> This case study does not claim a measured reduction in defects, time savings, financial benefits or error-free payroll outcomes. Such results would require verified, approved evidence.</div>
+
+            <p>
+              The analytical contribution made fragmented data more comparable and
+              issues more traceable, helping stakeholders evaluate discrepancies and
+              support migration validation and remediation.
+            </p>
+
+            <div class="notice">
+              <strong>Evidence boundary:</strong> This case study does not claim a
+              measured reduction in defects, time savings, financial benefits or
+              error-free payroll outcomes. Such results would require verified,
+              approved evidence.
+            </div>
+
             <h3>What I learned</h3>
-            <p>A mismatch flag is only a starting point. Effective data migration analysis requires understanding the business meaning of each difference, identifying the appropriate owner and turning technical findings into practical next steps.</p>
+            <p>
+              A mismatch flag is only a starting point. Effective data migration
+              analysis requires understanding the business meaning of each difference,
+              identifying the appropriate owner and turning technical findings into
+              practical next steps.
+            </p>
           </section>
+
           <a class="end-link" href="../index.html#projects">← Back to all projects</a>
         </div>
       </div>
     </section>
-    <section>
-  <h2>Explore the HR migration dashboard</h2>
-  <p>
-    I built this independent Power BI project using 5,000 fictional
-    employee records. Explore the interactive web version to see how
-    I cleaned the data, investigated differences between systems and
-    identified which records could progress to business sign-off.
-  </p>
-  <p><a href="./hr-migration.html">Open the interactive dashboard</a></p>
-</section>
   </main>
-  <footer><div class="wrap footerflex"><span>© 2026 Aaron Wedick</span><span>Professional portfolio</span></div></footer>
+
+  <footer>
+    <div class="wrap footerflex">
+      <span>© 2026 Aaron Wedick</span>
+      <span>Professional portfolio</span>
+    </div>
+  </footer>
 </body>
 </html>
